@@ -119,8 +119,11 @@ run_erizoAgent() {
   node erizoAgent.js &
 }
 run_basicExample() {
-  echo "Starting Accelerator"
-  cd $EXTRAS/Accelerator
+  echo "Starting basicExample"
+  sleep 5
+  cp $ROOT/erizo_controller/erizoClient/dist/erizo.js $EXTRAS/basic_example/public/
+  cp $ROOT/nuve/nuveClient/dist/nuve.js $EXTRAS/basic_example/
+  cd $EXTRAS/basic_example
   node basicServer.js &
 }
 
@@ -179,7 +182,6 @@ if [ "$BASICEXAMPLE" = "true" ]; then
         if [ -f temp2.txt ]; then
             echo "ex" > temp2.txt
             sleep 2
-            cp -a /opt/licode/extras/Accelerator/* /opt/licode/extras/dev/
         fi
         echo "\n\n-------------------------\n>>>>RDY FOR DEVELOPMENT!<<<<\n-------------------------\n\n"
     else
