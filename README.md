@@ -4,6 +4,9 @@ Docker repo of Licode with following changes:
  * Runnable with -e "SSL=TRUE" to run with SSL
  * Runnable with -e "LICODEHOSTNAME=hostname" to set your hostname
  * Runnable with -e "MAXVIDEOBW=3000" to change maxvideo bandwith
+ * Runnable with -e "MAXPROCESSES=2" to change used cpus
+ * Runnable with -e "PRERUNPROCESSES=2" to change processes at startup
+ * Runnable with -e "ERIZOCLIENTPORT=9090" to change if 8080 is used
  * Fix for bug reported at: https://github.com/lynckia/licode/issues/919
  
  # RUN
