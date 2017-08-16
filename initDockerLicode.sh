@@ -150,6 +150,18 @@ if [ "$NUVE" = "true" ]; then
   run_nuve
 fi
 
+if [ -n "$ERIZOCLIENTPORT" ]; then
+  echo "config.erizoController.port = '$ERIZOCLIENTPORT';" >> /opt/licode/licode_config.js
+fi
+
+if [ -n "$MAXPROCESSES" ]; then
+  echo "config.erizoAgent.maxProcesses = '$MAXPROCESSES';" >> /opt/licode/licode_config.js
+fi
+
+if [ -n "$PRERUNPROCESSES" ]; then
+  echo "config.erizoAgent.prerunProcesses = '$PRERUNPROCESSES';" >> /opt/licode/licode_config.js
+fi
+
 if [ "$ERIZOCONTROLLER" = "true" ]; then
   echo "config.erizoController.publicIP = '$PUBLIC_IP';" >> /opt/licode/licode_config.js
   run_erizoController
