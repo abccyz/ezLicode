@@ -162,6 +162,10 @@ if [ -n "$PRERUNPROCESSES" ]; then
   echo "config.erizoAgent.prerunProcesses = '$PRERUNPROCESSES';" >> /opt/licode/licode_config.js
 fi
 
+if [ -n "$RECORDINGPATH" ]; then
+  echo "config.erizoController.recording_path = '$RECORDINGPATH';" >> /opt/licode/licode_config.js
+fi
+
 if [ "$ERIZOCONTROLLER" = "true" ]; then
   echo "config.erizoController.publicIP = '$PUBLIC_IP';" >> /opt/licode/licode_config.js
   run_erizoController
