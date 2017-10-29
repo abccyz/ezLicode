@@ -1,4 +1,4 @@
-FROM lynckia/licode
+FROM lynckia/licode:develop
 
 MAINTAINER cracker0dks
 
