@@ -189,6 +189,17 @@ if [ "$ERIZOAGENT" = "true" ]; then
         echo "config.erizoController.listen_ssl = true;" >> /opt/licode/licode_config.js
   fi
 
+  #GUID: http://lynckia.com/licode/nginx-dep.html
+  if [ -n "$REVERSEPROXY" ]; then
+        echo "SET REVERSEPROXY"
+        echo "config.erizoController.ssl = true;" >> /opt/licode/licode_config.js
+        echo "config.erizoController.listen_ssl = false;" >> /opt/licode/licode_config.js
+        echo "config.erizoController.listen_port = 8080;" >> /opt/licode/licode_config.js
+        echo "config.erizoController.hostname = '';" >> /opt/licode/licode_config.js
+        echo "config.erizoController.port = 443;" >> /opt/licode/licode_config.js
+        echo "config.erizoController.ssl = true;" >> /opt/licode/licode_config.js
+  fi
+
   run_erizoAgent
 fi
 
