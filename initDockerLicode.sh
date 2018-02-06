@@ -58,7 +58,7 @@ check_result() {
 run_rabbitmq() {
   echo "Starting Rabbitmq"
   rabbitmq-server -detached
-  sleep 3
+  sleep 5
 }
 
 run_mongo() {
@@ -69,7 +69,7 @@ run_mongo() {
     fi
     mongod --repair --dbpath $DB_DIR
     mongod --nojournal --dbpath $DB_DIR --logpath $BUILD_DIR/mongo.log --fork
-    sleep 5
+    sleep 10
   else
     echo [licode] mongodb already running
   fi
