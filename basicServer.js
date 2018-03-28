@@ -51,7 +51,7 @@ N.API.init(config.nuve.superserviceID, config.nuve.superserviceKey, 'http://loca
 var defaultRoom;
 const defaultRoomName = 'basicExampleRoom';
 
-var getOrCreateRoom = function (name, type = 'erizo', mediaConfiguration = 'default',
+var getOrCreateRoom = function (name, type = 'erizo', mediaConfiguration = 'default', sipNumber = 0,
                                 callback = function() {}) {
 
     if (name === defaultRoomName && defaultRoom) {
@@ -72,7 +72,7 @@ var getOrCreateRoom = function (name, type = 'erizo', mediaConfiguration = 'defa
                 return;
             }
         }
-        let extra = {data: {basicExampleRoom: true}, mediaConfiguration: mediaConfiguration};
+        let extra = {data: {basicExampleRoom: true}, mediaConfiguration: mediaConfiguration, sipNumber : sipNumber};
         if (type === 'p2p') extra.p2p = true;
 
         N.API.createRoom(name, function (roomID) {
@@ -152,12 +152,13 @@ app.post('/createToken/', function(req, res) {
     let username = req.body.username;
     let role = req.body.role;
 
-    let room = defaultRoomName, type, roomId, mediaConfiguration;
+    let room = defaultRoomName, type, roomId, mediaConfiguration, sipNumber;
 
     if (req.body.room) room = req.body.room;
     if (req.body.type) type = req.body.type;
     if (req.body.roomId) roomId = req.body.roomId;
     if (req.body.mediaConfiguration) mediaConfiguration = req.body.mediaConfiguration;
+    if (req.body.sipNumber) sipNumber = req.body.sipNumber;
 
     let createToken = function (roomId) {
       N.API.createToken(roomId, username, role, function(token) {
@@ -172,7 +173,7 @@ app.post('/createToken/', function(req, res) {
     if (roomId) {
       createToken(roomId);
     } else {
-      getOrCreateRoom(room, type, mediaConfiguration, createToken);
+      getOrCreateRoom(room, type, mediaConfiguration,sipNumber, createToken);
     }
 
 });
