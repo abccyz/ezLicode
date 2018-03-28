@@ -72,7 +72,7 @@ var getOrCreateRoom = function (name, type = 'erizo', mediaConfiguration = 'defa
                 return;
             }
         }
-        let extra = {data: {basicExampleRoom: true}, mediaConfiguration: mediaConfiguration, sipNumber : sipNumber};
+        let extra = {data: {basicExampleRoom: true, sipNumber : sipNumber}, mediaConfiguration: mediaConfiguration};
         if (type === 'p2p') extra.p2p = true;
 
         N.API.createRoom(name, function (roomID) {
