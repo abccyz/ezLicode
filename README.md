@@ -1,6 +1,6 @@
 # ezLicode 4 Docker
 
-Docker repo of Licode with following changes:
+Docker repo of the original Licode with bonus start parameters:
  * Runnable with -e "SSL=TRUE" to run with SSL
  * Runnable with -e "LICODEHOSTNAME=hostname" to set your hostname
  * Runnable with -e "MAXVIDEOBW=3000" to change maxvideo bandwith
@@ -10,7 +10,6 @@ Docker repo of Licode with following changes:
  * Runnable with -e "RECORDINGPATH=/opt/" to set the path for your recordings
  * Runnable with -e "TURN=[{'url': 'stun:stun.l.google.com:19302'}, {'username': 'myuser', 'credential': 'mypassword','url': 'turn:myip'}]" to set your stun and turn config
  * Runnable with -e "REVERSEPROXY=TRUE" change settings according to this guid: http://lynckia.com/licode/nginx-dep.html
- * Merge fix: https://github.com/lynckia/licode/pull/1062
  
  # RUN
  
