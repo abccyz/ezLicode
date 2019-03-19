@@ -200,7 +200,7 @@ app.use((req, res, next) => {
 });
 
 cleanExampleRooms(() => {
-  getOrCreateRoom(defaultRoomName, undefined, undefined, (roomId) => {
+  getOrCreateRoom(defaultRoomName, undefined, undefined, undefined, (roomId) => {
     defaultRoom = roomId;
     app.listen(3001);
     const server = https.createServer(options, app);
