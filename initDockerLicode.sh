@@ -158,11 +158,11 @@ if [ -n "$ERIZOCLIENTPORT" ]; then
 fi
 
 if [ -n "$MAXPROCESSES" ]; then
-  echo "config.erizoAgent.maxProcesses = '$MAXPROCESSES';" >> /opt/licode/licode_config.js
+  echo "config.erizoAgent.maxProcesses = $MAXPROCESSES;" >> /opt/licode/licode_config.js
 fi
 
 if [ -n "$PRERUNPROCESSES" ]; then
-  echo "config.erizoAgent.prerunProcesses = '$PRERUNPROCESSES';" >> /opt/licode/licode_config.js
+  echo "config.erizoAgent.prerunProcesses = $PRERUNPROCESSES;" >> /opt/licode/licode_config.js
 fi
 
 if [ ! -f "$ROOT"/rtp_media_config.js ]; then
