@@ -188,9 +188,9 @@ if [ "$ERIZOAGENT" = "true" ]; then
         echo "config.erizoController.ssl = true;" >> /opt/licode/licode_config.js
         echo "config.erizoController.listen_ssl = true;" >> /opt/licode/licode_config.js
   fi
-  if [ -n "$TURN" ]; then
+  if [ -n "$STUNTURN" ]; then
         echo "SET MAX VIDEO BW"
-        echo "config.erizoController.iceServers = $TURN;" >> /opt/licode/licode_config.js
+        echo "config.erizoController.iceServers = $STUNTURN;" >> /opt/licode/licode_config.js
   fi
 
   #GUID: http://lynckia.com/licode/nginx-dep.html
